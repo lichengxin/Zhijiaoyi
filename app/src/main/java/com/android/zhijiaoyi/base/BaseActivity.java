@@ -107,11 +107,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 
    public abstract int getLayoutId();
 
-    /*初始化initView()*/
-    public abstract void initView();
-
-    /*初始化数据*/
-    public abstract void initData();
 
     @Override
     protected void onResume() {
