@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.android.zhijiaoyi.ui.activity.ItemActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <com.android.zhijiaoyi.view.CommonItem1
+        android:layout_marginTop="@dimen/spac_10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:arrow_item="@drawable/right"
+        app:background_item="@color/white"
+        app:img_item="@drawable/setting_blue"
+        app:text_item="@string/item"
+        app:textcolor_item="@color/RGB_000000"
+        app:textsize_item="@dimen/spac_5" />
+</LinearLayout>
