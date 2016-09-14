@@ -12,4 +12,9 @@ public class Constant {
     /*登录接口*/
     public static final String USERLOGIN  = BASE_URL + "v1/ucenter/user/login/?";
 
+
+    //版本更新
+    public static final String VERSION = "http://www.renqidai.cc:8088/AppVersion/GetNewVersion";
+
+
 }

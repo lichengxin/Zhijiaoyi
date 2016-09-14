@@ -9,4 +9,8 @@
     <color name="list_divider">#19000000</color>
     <!--mainActivity背景色-->
     <color name="white">#fff</color>
+    <!--dialog 确定字体颜色-->
+    <color name="clolor_0698aa">#0698aa</color>
+
+    <color name="RGB_000000">#666666</color>
 </resources>

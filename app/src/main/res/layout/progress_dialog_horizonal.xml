@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lLayout_bg"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog_lay_round"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <com.dinuscxj.progressbar.CircleProgressBar
+            android:id="@+id/line_progress"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="@dimen/spac_15"
+            android:layout_marginTop="@dimen/spac_15" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_topic_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spac_10"
+        android:gravity="center"
+        android:paddingBottom="@dimen/spac_15"
+        android:paddingLeft="@dimen/spac_18"
+        android:paddingRight="@dimen/spac_18"
+        android:text="正在下载中"
+        android:textColor="@color/white"
+        android:textSize="@dimen/spac_14" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/spac_15"
+        android:paddingRight="@dimen/spac_15"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/btn_download_pos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center"
+            android:padding="@dimen/spac_15"
+            android:text="后台下载"
+            android:textColor="@color/clolor_0698aa"
+            android:textSize="18dp" />
+
+
+        <Button
+            android:id="@+id/btn_download_neg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center"
+            android:padding="@dimen/spac_15"
+            android:text="取消下载"
+            android:textColor="@color/clolor_0698aa"
+            android:textSize="18dp" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

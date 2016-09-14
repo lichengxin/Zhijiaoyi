@@ -46,13 +46,13 @@ public class MarketFragment extends BaseFragment implements View.OnClickListener
         mBtn2.setOnClickListener(this);
         mBtn3.setOnClickListener(this);
 
-        alertView = new AlertView("提示",null, "取消", null, null, getActivity(), AlertView.Style.Alert, null);
+       /* alertView = new AlertView("提示",null, "取消", null, null, getActivity(), AlertView.Style.Alert, null);
         ViewGroup extView = (ViewGroup) LayoutInflater.from(getActivity()).inflate(R.layout.alertext_form, null);
         TextView tv1 = (TextView) extView.findViewById(R.id.tv1);
         TextView tv2 = (TextView) extView.findViewById(R.id.tv2);
         tv1.setOnClickListener(this);
         tv2.setOnClickListener(this);
-        alertView.addExtView(extView);
+        alertView.addExtView(extView);*/
 
     }
 
@@ -89,12 +89,12 @@ public class MarketFragment extends BaseFragment implements View.OnClickListener
             case R.id.btn3:
                 alertView.show();
                 break;
-            case R.id.tv1:
+          /*  case R.id.tv1:
                 Toast.makeText(getActivity(),"tv:1",Toast.LENGTH_LONG).show();
                 break;
             case R.id.tv2:
                 Toast.makeText(getActivity(),"tv:2",Toast.LENGTH_LONG).show();
-                break;
+                break;*/
         }
     }
 }
