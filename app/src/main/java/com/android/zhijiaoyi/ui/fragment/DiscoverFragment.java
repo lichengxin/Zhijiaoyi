@@ -1,6 +1,7 @@
 package com.android.zhijiaoyi.ui.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
@@ -13,10 +14,13 @@ import android.widget.EditText;
 
 import com.android.zhijiaoyi.R;
 import com.android.zhijiaoyi.base.BaseFragment;
+import com.android.zhijiaoyi.constans.Cons;
 import com.android.zhijiaoyi.constans.Constant;
 import com.android.zhijiaoyi.ui.activity.CreateGestureActivity;
-import com.android.zhijiaoyi.util.IntentUtil;
+import com.android.zhijiaoyi.ui.activity.GestureLoginActivity;
+import com.android.zhijiaoyi.util.LogUtils;
 import com.android.zhijiaoyi.util.StrUtils;
+import com.android.zhijiaoyi.util.cache.ACache;
 
 import cn.finalteam.okhttpfinal.HttpRequest;
 import cn.finalteam.okhttpfinal.RequestParams;
@@ -34,6 +38,8 @@ public class DiscoverFragment extends BaseFragment implements View.OnClickListen
     private Button mBtnLogin;
     private Button btn_guesture;
 
+    private ACache aCache;
+
     public DiscoverFragment() {
     }
 
@@ -42,6 +48,7 @@ public class DiscoverFragment extends BaseFragment implements View.OnClickListen
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_discover, container, false);
+        aCache = ACache.get(getActivity());
         initView(view);
         return view;
     }
@@ -63,7 +70,16 @@ public class DiscoverFragment extends BaseFragment implements View.OnClickListen
                 submit();
                 break;
             case R.id.btn_guesture:
-                IntentUtil.showIntent(getActivity(), CreateGestureActivity.class);
+                String gesturePassword = aCache.getAsString(Cons.GESTURE_PASSWORD);
+                if(gesturePassword == null || "".equals(gesturePassword)) {
+                    LogUtils.logE(DiscoverFragment.class,"去创建手势密码");
+                    Intent intent = new Intent(getActivity(), CreateGestureActivity.class);
+                    startActivity(intent);
+                } else {
+                    LogUtils.logE(DiscoverFragment.class,"去解锁");
+                    Intent intent = new Intent(getActivity(), GestureLoginActivity.class);
+                    startActivity(intent);
+                }
                 break;
         }
     }

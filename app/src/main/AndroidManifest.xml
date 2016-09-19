@@ -55,6 +55,8 @@
         </activity>
         <activity android:name=".ui.activity.CreateGestureActivity">
         </activity>
+        <activity android:name=".ui.activity.GestureLoginActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    android:id="@+id/activity_gesture_login"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,45 +8,45 @@
 
     <include layout="@layout/toolbar"/>
 
-    <com.star.lockpattern.widget.LockPatternIndicator
-        android:id="@+id/lockPatterIndicator"
-        android:layout_width="@dimen/spac_30"
-        android:layout_height="@dimen/spac_30"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/spac_50"/>
-
     <TextView
         android:id="@+id/messageTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/spac_20"
-        android:text="@string/create_gesture_default"
-        android:textColor="@color/grey_a5a5a5"
+        android:layout_marginTop="@dimen/spac_150"
         android:textSize="@dimen/spac_16"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/spac_20"
+        android:layout_marginTop="@dimen/spac_10"
         android:orientation="vertical">
 
         <com.star.lockpattern.widget.LockPatternView
             android:id="@+id/lockPatternView"
             android:layout_width="270dp"
-            android:layout_height="270dp"/>
+            android:layout_height="270dp"
+            android:layout_gravity="center_horizontal"/>
 
-        <Button
-            android:id="@+id/resetBtn"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/spac_40"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/spac_20"
-            android:background="@drawable/layout_grey_bg"
-            android:text="@string/create_gesture_reset"
-            android:textColor="@color/grey_a5a5a5"
-            android:textSize="@dimen/spac_16"/>
+            android:layout_marginTop="@dimen/spac_10">
+
+            <Button
+                android:id="@+id/forgetGestureBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/layout_grey_bg"
+                android:paddingLeft="@dimen/spac_5"
+                android:paddingRight="@dimen/spac_5"
+                android:text="@string/gesture_forget_gesture"
+                android:textSize="@dimen/spac_14"/>
+
+        </RelativeLayout>
 
     </LinearLayout>
+
 </LinearLayout>
