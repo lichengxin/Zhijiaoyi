@@ -1,11 +1,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.android.zhijiaoyi.ui.fragment.DiscoverFragment">
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="com.android.zhijiaoyi.ui.fragment.DiscoverFragment">
 
-    <include layout="@layout/toolbar" />
+    <include layout="@layout/toolbar"/>
 
     <EditText
         android:id="@+id/et_userName"
@@ -16,7 +16,8 @@
         android:layout_marginTop="@dimen/spac_10"
         android:hint="请输入用户名"
         android:text="songbingli"
-        android:textSize="@dimen/spac_14" />
+        android:textSize="@dimen/spac_14"
+        android:visibility="gone"/>
 
     <EditText
         android:id="@+id/et_password"
@@ -27,7 +28,8 @@
         android:layout_marginTop="@dimen/spac_10"
         android:hint="请输入密码"
         android:text="000000"
-        android:textSize="@dimen/spac_14" />
+        android:textSize="@dimen/spac_14"
+        android:visibility="gone"/>
 
     <Button
         android:id="@+id/btn_login"
@@ -39,5 +41,12 @@
         android:layout_marginTop="50dp"
         android:text="登录"
         android:textColor="@color/white"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/btn_guesture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="手势密码"/>
 </LinearLayout>

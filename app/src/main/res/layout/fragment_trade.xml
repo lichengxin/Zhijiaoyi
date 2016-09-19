@@ -1,11 +1,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.android.zhijiaoyi.ui.fragment.TradeFragment">
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="com.android.zhijiaoyi.ui.fragment.TradeFragment">
 
-    <include layout="@layout/toolbar" />
+    <include layout="@layout/toolbar"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -21,21 +21,49 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spac_10"
-                android:text="版本更新" />
+                android:text="版本更新"/>
 
             <Button
                 android:id="@+id/btn_tab"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spac_10"
-                android:text="仿QQ标签切换" />
+                android:text="仿QQ标签切换"/>
 
             <Button
                 android:id="@+id/btn_wchat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spac_10"
-                android:text="简单封装的一个item，仿照微信" />
+                android:text="简单封装的一个item，仿照微信"/>
+
+            <Button
+                android:id="@+id/btn_tab2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spac_10"
+                android:text="tab 嵌套Fragment"/>
+
+            <Button
+                android:id="@+id/btn_Volley"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spac_10"
+                android:text="Volley简易封装"/>
+
+            <Button
+                android:id="@+id/btn_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spac_10"
+                android:text="相机、裁剪、压缩、保存"/>
+
+            <Button
+                android:id="@+id/btn_image2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spac_10"
+                android:text="相机、裁剪、压缩、保存"/>
 
         </LinearLayout>
     </ScrollView>

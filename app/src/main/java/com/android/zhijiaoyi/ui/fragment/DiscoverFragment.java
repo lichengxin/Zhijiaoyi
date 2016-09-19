@@ -14,10 +14,9 @@ import android.widget.EditText;
 import com.android.zhijiaoyi.R;
 import com.android.zhijiaoyi.base.BaseFragment;
 import com.android.zhijiaoyi.constans.Constant;
+import com.android.zhijiaoyi.ui.activity.CreateGestureActivity;
+import com.android.zhijiaoyi.util.IntentUtil;
 import com.android.zhijiaoyi.util.StrUtils;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import cn.finalteam.okhttpfinal.HttpRequest;
 import cn.finalteam.okhttpfinal.RequestParams;
@@ -33,16 +32,15 @@ public class DiscoverFragment extends BaseFragment implements View.OnClickListen
     private EditText mEtUserName;
     private EditText mEtPassword;
     private Button mBtnLogin;
+    private Button btn_guesture;
 
     public DiscoverFragment() {
-        // Required empty public constructor
     }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_discover, container, false);
         initView(view);
         return view;
@@ -52,8 +50,10 @@ public class DiscoverFragment extends BaseFragment implements View.OnClickListen
         mEtUserName = (EditText) view.findViewById(R.id.et_userName);
         mEtPassword = (EditText) view.findViewById(R.id.et_password);
         mBtnLogin = (Button) view.findViewById(R.id.btn_login);
+        btn_guesture = (Button) view.findViewById(R.id.btn_guesture);
 
         mBtnLogin.setOnClickListener(this);
+        btn_guesture.setOnClickListener(this);
     }
 
     @Override
@@ -61,6 +61,9 @@ public class DiscoverFragment extends BaseFragment implements View.OnClickListen
         switch (v.getId()) {
             case R.id.btn_login:
                 submit();
+                break;
+            case R.id.btn_guesture:
+                IntentUtil.showIntent(getActivity(), CreateGestureActivity.class);
                 break;
         }
     }
@@ -78,9 +81,7 @@ public class DiscoverFragment extends BaseFragment implements View.OnClickListen
 
             return;
         }
-        doLogin(userName,password);
-
-
+        doLogin(userName, password);
 
 
     }
@@ -90,20 +91,20 @@ public class DiscoverFragment extends BaseFragment implements View.OnClickListen
 
         String ua = "LOCAL_DEV_CLIENT";
         String signkey = "LOCAL_DEV_REQUEST_SIGN_KEY";
-        String signdata = signkey + "password="+password + "&username=" + username + signkey;
-        Log.e("ww",signdata);
+        String signdata = signkey + "password=" + password + "&username=" + username + signkey;
+        Log.e("ww", signdata);
 
         String sign = StrUtils.MD5(signdata);
-        String url = Constant.USERLOGIN + "sign=" + sign+"&ua="+ua;
+        String url = Constant.USERLOGIN + "sign=" + sign + "&ua=" + ua;
         RequestParams params = new RequestParams();//请求参数
         params.addFormDataPart("username", username);
         params.addFormDataPart("password", password);
-        HttpRequest.post(url,params,new StringHttpRequestCallback(){
+        HttpRequest.post(url, params, new StringHttpRequestCallback() {
             @Override
             protected void onSuccess(String s) {
                 super.onSuccess(s);
 
-                Log.e("w","=="+s);
+                Log.e("w", "==" + s);
             }
         });
     }
