@@ -7,6 +7,8 @@ package com.android.zhijiaoyi.constans;
  */
 public class Constant {
     public static String BASE_URL = "http://proxyapi.test.langbank.org/";
+
+    public static String sina_data="http://hq.sinajs.cn/list=";
 //    public static String BASE_URL = "http://192.168.40.131/";
 
     /*登录接口*/

@@ -91,7 +91,7 @@ public class TradeFragment extends BaseFragment implements View.OnClickListener 
                 IntentUtil.showIntent(getActivity(), TabActivity.class);
                 break;
             case R.id.btn_wchat:
-                IntentUtil.showIntent(getActivity(), ItemActivity.class);
+                Intehttp://www.cnblogs.com/luluping/archive/2010/11/15/1877817.htmlntUtil.showIntent(getActivity(), ItemActivity.class);
                 break;
             case R.id.btn_tab2:
                 IntentUtil.showIntent(getActivity(), TestTabActivity.class);

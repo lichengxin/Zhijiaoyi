@@ -18,6 +18,8 @@ import com.android.zhijiaoyi.constans.Cons;
 import com.android.zhijiaoyi.constans.Constant;
 import com.android.zhijiaoyi.ui.activity.CreateGestureActivity;
 import com.android.zhijiaoyi.ui.activity.GestureLoginActivity;
+import com.android.zhijiaoyi.ui.activity.JsonActivity;
+import com.android.zhijiaoyi.util.IntentUtil;
 import com.android.zhijiaoyi.util.LogUtils;
 import com.android.zhijiaoyi.util.StrUtils;
 import com.android.zhijiaoyi.util.cache.ACache;
@@ -39,6 +41,7 @@ public class DiscoverFragment extends BaseFragment implements View.OnClickListen
     private Button btn_guesture;
 
     private ACache aCache;
+    private Button mBtnJson;
 
     public DiscoverFragment() {
     }
@@ -61,6 +64,8 @@ public class DiscoverFragment extends BaseFragment implements View.OnClickListen
 
         mBtnLogin.setOnClickListener(this);
         btn_guesture.setOnClickListener(this);
+        mBtnJson = (Button) view.findViewById(R.id.btn_json);
+        mBtnJson.setOnClickListener(this);
     }
 
     @Override
@@ -71,15 +76,18 @@ public class DiscoverFragment extends BaseFragment implements View.OnClickListen
                 break;
             case R.id.btn_guesture:
                 String gesturePassword = aCache.getAsString(Cons.GESTURE_PASSWORD);
-                if(gesturePassword == null || "".equals(gesturePassword)) {
-                    LogUtils.logE(DiscoverFragment.class,"去创建手势密码");
+                if (gesturePassword == null || "".equals(gesturePassword)) {
+                    LogUtils.logE(DiscoverFragment.class, "去创建手势密码");
                     Intent intent = new Intent(getActivity(), CreateGestureActivity.class);
                     startActivity(intent);
                 } else {
-                    LogUtils.logE(DiscoverFragment.class,"去解锁");
+                    LogUtils.logE(DiscoverFragment.class, "去解锁");
                     Intent intent = new Intent(getActivity(), GestureLoginActivity.class);
                     startActivity(intent);
                 }
+                break;
+            case R.id.btn_json:
+                IntentUtil.showIntent(getActivity(), JsonActivity.class);
                 break;
         }
     }
