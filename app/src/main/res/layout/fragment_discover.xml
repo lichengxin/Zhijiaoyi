@@ -63,4 +63,18 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/spac_10"
         android:text="android 图层引导"/>
+
+    <Button
+        android:id="@+id/btn_share"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spac_10"
+        android:text="android 分享"/>
+
+    <Button
+        android:id="@+id/btn_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spac_10"
+        android:text="listView 复用item异常"/>
 </LinearLayout>

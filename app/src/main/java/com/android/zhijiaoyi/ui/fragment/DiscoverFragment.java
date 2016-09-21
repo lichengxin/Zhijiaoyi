@@ -20,6 +20,8 @@ import com.android.zhijiaoyi.ui.activity.CanvasGuideActivity;
 import com.android.zhijiaoyi.ui.activity.CreateGestureActivity;
 import com.android.zhijiaoyi.ui.activity.GestureLoginActivity;
 import com.android.zhijiaoyi.ui.activity.JsonActivity;
+import com.android.zhijiaoyi.ui.activity.ListViewDataActivity;
+import com.android.zhijiaoyi.ui.activity.ShareActivity;
 import com.android.zhijiaoyi.util.IntentUtil;
 import com.android.zhijiaoyi.util.LogUtils;
 import com.android.zhijiaoyi.util.StrUtils;
@@ -44,6 +46,8 @@ public class DiscoverFragment extends BaseFragment implements View.OnClickListen
     private ACache aCache;
     private Button mBtnJson;
     private Button mBtnCanvas;
+    private Button mBtnShare;
+    private Button mBtnList;
 
     public DiscoverFragment() {
     }
@@ -70,6 +74,10 @@ public class DiscoverFragment extends BaseFragment implements View.OnClickListen
         mBtnJson = (Button) view.findViewById(R.id.btn_json);
         mBtnJson.setOnClickListener(this);
         mBtnCanvas.setOnClickListener(this);
+        mBtnShare = (Button) view.findViewById(R.id.btn_share);
+        mBtnShare.setOnClickListener(this);
+        mBtnList = (Button) view.findViewById(R.id.btn_list);
+        mBtnList.setOnClickListener(this);
     }
 
     @Override
@@ -95,6 +103,12 @@ public class DiscoverFragment extends BaseFragment implements View.OnClickListen
                 break;
             case R.id.btn_canvas:
                 IntentUtil.showIntent(getActivity(), CanvasGuideActivity.class);
+                break;
+            case R.id.btn_share:
+                IntentUtil.showIntent(getActivity(), ShareActivity.class);
+                break;
+            case R.id.btn_list:
+                IntentUtil.showIntent(getActivity(), ListViewDataActivity.class);
                 break;
         }
     }
