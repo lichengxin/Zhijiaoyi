@@ -40,6 +40,13 @@
                 android:text="标题"
                 android:textColor="@color/titleColor"
                 android:textSize="@dimen/spac_18"/>
+            <ImageButton
+                android:id="@+id/ib_menu"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@color/transparent"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_menu_moreoverflow"/>
         </RelativeLayout>
 
     </android.support.v7.widget.Toolbar>

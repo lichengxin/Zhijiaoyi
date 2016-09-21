@@ -19,4 +19,8 @@
     <color name="grey_dde1e7">#DDE1E7</color>
     <color name="red_f4333c">#F4333C</color>
 
+    <color name="transparent">#00000000</color>
+    <color name="shadow">#cc222222</color>
+    <color name="Red_800">#ffb93221</color>
+
 </resources>

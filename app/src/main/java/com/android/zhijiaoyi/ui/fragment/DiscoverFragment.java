@@ -16,6 +16,7 @@ import com.android.zhijiaoyi.R;
 import com.android.zhijiaoyi.base.BaseFragment;
 import com.android.zhijiaoyi.constans.Cons;
 import com.android.zhijiaoyi.constans.Constant;
+import com.android.zhijiaoyi.ui.activity.CanvasGuideActivity;
 import com.android.zhijiaoyi.ui.activity.CreateGestureActivity;
 import com.android.zhijiaoyi.ui.activity.GestureLoginActivity;
 import com.android.zhijiaoyi.ui.activity.JsonActivity;
@@ -42,6 +43,7 @@ public class DiscoverFragment extends BaseFragment implements View.OnClickListen
 
     private ACache aCache;
     private Button mBtnJson;
+    private Button mBtnCanvas;
 
     public DiscoverFragment() {
     }
@@ -61,11 +63,13 @@ public class DiscoverFragment extends BaseFragment implements View.OnClickListen
         mEtPassword = (EditText) view.findViewById(R.id.et_password);
         mBtnLogin = (Button) view.findViewById(R.id.btn_login);
         btn_guesture = (Button) view.findViewById(R.id.btn_guesture);
+        mBtnCanvas = (Button) view.findViewById(R.id.btn_canvas);
 
         mBtnLogin.setOnClickListener(this);
         btn_guesture.setOnClickListener(this);
         mBtnJson = (Button) view.findViewById(R.id.btn_json);
         mBtnJson.setOnClickListener(this);
+        mBtnCanvas.setOnClickListener(this);
     }
 
     @Override
@@ -88,6 +92,9 @@ public class DiscoverFragment extends BaseFragment implements View.OnClickListen
                 break;
             case R.id.btn_json:
                 IntentUtil.showIntent(getActivity(), JsonActivity.class);
+                break;
+            case R.id.btn_canvas:
+                IntentUtil.showIntent(getActivity(), CanvasGuideActivity.class);
                 break;
         }
     }
