@@ -1,36 +1,36 @@
 package com.android.zhijiaoyi.ui.activity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.ImageView;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.android.zhijiaoyi.R;
+import com.android.zhijiaoyi.adapter.SearchAdapter;
 import com.android.zhijiaoyi.base.BaseActivity;
-import com.android.zhijiaoyi.bean.StockItem;
-import com.android.zhijiaoyi.util.LogUtils;
+import com.android.zhijiaoyi.bean.StockItem2;
+import com.android.zhijiaoyi.util.ToastUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ListViewDataActivity extends BaseActivity {
 
-    private List<StockItem> lists = new ArrayList<>();
+    private List<StockItem2> lists = new ArrayList<>();
     private ListView mLvList;
     private SearchAdapter adapter;
+
 
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         for (int i = 0; i < 1000; i++) {
-            lists.add(new StockItem("600001", "浦发银行"));
+            lists.add(new StockItem2("600001", "浦发银行"));
         }
         initView();
     }
@@ -47,112 +47,63 @@ public class ListViewDataActivity extends BaseActivity {
 
     private void initView() {
         mLvList = (ListView) findViewById(R.id.lv_list);
-        adapter = new SearchAdapter();
+        adapter = new SearchAdapter(lists, ListViewDataActivity.this);
         mLvList.setAdapter(adapter);
-    }
 
-    public class ViewHolder {
-        public TextView stockName;
-        public TextView stockCode;
-        public CheckBox mCheckBox;
-//        public ImageView addImage;
-//        public TextView addTv;
-    }
-
-    public class SearchAdapter extends BaseAdapter {
-        //定义一个列表用于保存选中项目
-        private List<Integer> mSelect = new ArrayList<Integer>();
-
-        @Override
-        public int getCount() {
-            return lists.size();
-        }
-
-        @Override
-        public Object getItem(int position) {
-            return lists.get(position);
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return position;
-        }
-
-        @Override
-//        public View getView(final int position, View convertView, ViewGroup parent) {
-//
-//            // TODO Auto-generated method stub
-//            final int mPosition = position;
-//
-//            ViewHolder holder = null;
-//            StockItem brandItemInfo = (StockItem) getItem(position);
-//            if (convertView == null) {
-//                holder = new ViewHolder();
-//                convertView = LayoutInflater.from(ListViewDataActivity.this).inflate(R.layout.search_item, parent, false);
-//                holder.stockName = (TextView) convertView.findViewById(R.id.tv_stockName);
-//                holder.stockCode = (TextView) convertView.findViewById(R.id.tv_stockCode);
-//                holder.mCheckBox = (CheckBox) convertView.findViewById(R.id.checkbox);
-//                final ViewHolder finalViewHolder = holder;
-//
-//                holder.mCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//                    @Override
-//                    public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
-//                        StockItem info = (StockItem) finalViewHolder.mCheckBox.getTag();
-//                        info.setSelected(compoundButton.isChecked());
-//                    }
-//                });
-//
-//
-//                convertView.setTag(holder);
-//                holder.mCheckBox.setTag(brandItemInfo);
-//            } else {
-//                holder = (ViewHolder) convertView.getTag();
-//                holder.mCheckBox.setTag(brandItemInfo);
-//            }
-//
-//
-//            final String stockName = lists.get(position).stockName;
-//            final String stockCode = lists.get(position).stockCode;
-//            holder.stockName.setText(stockName);
-//            holder.stockCode.setText(stockCode);
-//
-//
-//            return convertView;
-//        }
-
-        public View getView(final int position, View convertView, ViewGroup parent) {
-
-            ViewHolder holder = null;
-            StockItem brandItemInfo = (StockItem) getItem(position);
-            if (convertView == null) {
-                holder = new ViewHolder();
-                convertView = LayoutInflater.from(ListViewDataActivity.this).inflate(R.layout.search_item, parent, false);
-                holder.stockName = (TextView) convertView.findViewById(R.id.tv_stockName);
-                holder.stockCode = (TextView) convertView.findViewById(R.id.tv_stockCode);
-                holder.mCheckBox = (CheckBox) convertView.findViewById(R.id.checkbox);
-                convertView.setTag(holder);
-                holder.mCheckBox.setTag(brandItemInfo);
-            } else {
-                holder = (ViewHolder) convertView.getTag();
-                holder.mCheckBox.setTag(brandItemInfo);
+        mLvList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                showDialogs("浦发银行");
             }
+        });
 
-
-            final String stockName = lists.get(position).stockName;
-            final String stockCode = lists.get(position).stockCode;
-            final ViewHolder finalViewHolder = holder;
-            holder.mCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                @Override
-                public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
-                    StockItem info = (StockItem) finalViewHolder.mCheckBox.getTag();
-                    info.setSelected(compoundButton.isChecked());
-
-                }
-            });
-            holder.stockName.setText(stockName);
-            holder.stockCode.setText(stockCode);
-            holder.mCheckBox.setChecked(brandItemInfo.isSelected());
-            return convertView;
-        }
     }
+
+    private void showDialogs(String title) {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        View view = getLayoutInflater().inflate(R.layout.dialog_item, null);
+        TextView tv0 = (TextView) view.findViewById(R.id.tv0);
+        Button tv1 = (Button) view.findViewById(R.id.tv1);
+        Button tv2 = (Button) view.findViewById(R.id.tv2);
+        Button tv3 = (Button) view.findViewById(R.id.tv3);
+        tv0.setText(title);
+        tv1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ToastUtils.showToast("点击了第一个", getApplicationContext());
+            }
+        });
+        tv2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ToastUtils.showToast("点击了第2个", getApplicationContext());
+                builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                    @Override
+                    public void onDismiss(DialogInterface dialog) {
+                        dialog.dismiss();
+                    }
+                });
+            }
+        });
+        tv3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ToastUtils.showToast("点击了第3个", getApplicationContext());
+            }
+        });
+        builder.setView(view);
+        builder.setCancelable(false);
+        builder.setPositiveButton("取消", new
+                DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+
+        builder.show();
+
+    }
+
+
 }

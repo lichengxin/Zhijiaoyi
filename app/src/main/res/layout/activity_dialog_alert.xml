@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:id="@+id/activity_dialog_alert"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.android.zhijiaoyi.ui.activity.DialogAlertActivity">
+
+    <include layout="@layout/toolbar"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/showMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Show Message" />
+
+            <Button
+                android:id="@+id/showLongMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showMessage"
+                android:layout_marginTop="12dp"
+                android:text="Show Long Message" />
+
+            <Button
+                android:id="@+id/showProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showLongMessage"
+                android:layout_marginTop="12dp"
+                android:text="Show Progress" />
+
+            <Button
+                android:id="@+id/showProgressHorizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showProgress"
+                android:layout_marginTop="12dp"
+                android:text="Show Progress Horizontal" />
+
+            <Button
+                android:id="@+id/showList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showProgressHorizontal"
+                android:text="Show List" />
+
+            <Button
+                android:id="@+id/showMultiChoiceList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showList"
+                android:text="Show Multi-Choice List" />
+
+            <Button
+                android:id="@+id/showSingleChoiceList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showMultiChoiceList"
+                android:text="Show Single-Choice List" />
+
+            <Button
+                android:id="@+id/showCustomView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showSingleChoiceList"
+                android:text="Show Custom View" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

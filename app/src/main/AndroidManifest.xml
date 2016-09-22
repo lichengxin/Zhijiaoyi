@@ -123,6 +123,18 @@
         </activity>
         <activity android:name=".ui.activity.ListViewDataActivity">
         </activity>
+        <activity android:name=".ui.activity.ListViewDataActivity2">
+        </activity>
+        <activity android:name=".ui.activity.ListViewDetail">
+        </activity>
+        <activity android:name=".ui.activity.ListViewDetailData1">
+        </activity>
+        <activity android:name=".ui.activity.KeyBordListenerActivity">
+        </activity>
+        <activity android:name=".ui.activity.DialogActivity">
+        </activity>
+        <activity android:name=".ui.activity.DialogAlertActivity">
+        </activity>
     </application>
 
 </manifest>

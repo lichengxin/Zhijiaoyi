@@ -77,4 +77,32 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/spac_10"
         android:text="listView 复用item异常"/>
+
+    <Button
+        android:id="@+id/btn_colect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spac_10"
+        android:text="listView 复用item异常2"/>
+
+    <Button
+        android:id="@+id/btn_listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spac_10"
+        android:text="listView 详解"/>
+
+    <Button
+        android:id="@+id/btn_keybord"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spac_10"
+        android:text="键盘 详解"/>
+
+    <Button
+        android:id="@+id/btn_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spac_10"
+        android:text="dialog 详解"/>
 </LinearLayout>

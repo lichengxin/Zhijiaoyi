@@ -53,7 +53,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
             android:src="@drawable/mystocks_portfolio_listitem_addtips"
-            android:visibility="gone"/>
+            />
 
         <TextView
             android:id="@+id/tv_addText"
@@ -73,7 +73,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right|center_vertical"
             android:layout_marginEnd="20dp"
-            android:layout_marginRight="20dp"/>
+            android:layout_marginRight="20dp"
+            android:visibility="gone"/>
     </FrameLayout>
 
 

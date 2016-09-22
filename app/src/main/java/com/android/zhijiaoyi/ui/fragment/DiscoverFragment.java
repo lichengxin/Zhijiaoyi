@@ -18,9 +18,13 @@ import com.android.zhijiaoyi.constans.Cons;
 import com.android.zhijiaoyi.constans.Constant;
 import com.android.zhijiaoyi.ui.activity.CanvasGuideActivity;
 import com.android.zhijiaoyi.ui.activity.CreateGestureActivity;
+import com.android.zhijiaoyi.ui.activity.DialogActivity;
 import com.android.zhijiaoyi.ui.activity.GestureLoginActivity;
 import com.android.zhijiaoyi.ui.activity.JsonActivity;
+import com.android.zhijiaoyi.ui.activity.KeyBordListenerActivity;
 import com.android.zhijiaoyi.ui.activity.ListViewDataActivity;
+import com.android.zhijiaoyi.ui.activity.ListViewDataActivity2;
+import com.android.zhijiaoyi.ui.activity.ListViewDetail;
 import com.android.zhijiaoyi.ui.activity.ShareActivity;
 import com.android.zhijiaoyi.util.IntentUtil;
 import com.android.zhijiaoyi.util.LogUtils;
@@ -48,6 +52,10 @@ public class DiscoverFragment extends BaseFragment implements View.OnClickListen
     private Button mBtnCanvas;
     private Button mBtnShare;
     private Button mBtnList;
+    private Button mBtnColect;
+    private Button mBtnListView;
+    private Button mBtnKeybord;
+    private Button mBtnDialog;
 
     public DiscoverFragment() {
     }
@@ -78,6 +86,14 @@ public class DiscoverFragment extends BaseFragment implements View.OnClickListen
         mBtnShare.setOnClickListener(this);
         mBtnList = (Button) view.findViewById(R.id.btn_list);
         mBtnList.setOnClickListener(this);
+        mBtnColect = (Button) view.findViewById(R.id.btn_colect);
+        mBtnColect.setOnClickListener(this);
+        mBtnListView = (Button) view.findViewById(R.id.btn_listView);
+        mBtnListView.setOnClickListener(this);
+        mBtnKeybord = (Button) view.findViewById(R.id.btn_keybord);
+        mBtnKeybord.setOnClickListener(this);
+        mBtnDialog = (Button) view.findViewById(R.id.btn_dialog);
+        mBtnDialog.setOnClickListener(this);
     }
 
     @Override
@@ -109,6 +125,18 @@ public class DiscoverFragment extends BaseFragment implements View.OnClickListen
                 break;
             case R.id.btn_list:
                 IntentUtil.showIntent(getActivity(), ListViewDataActivity.class);
+                break;
+            case R.id.btn_colect:
+                IntentUtil.showIntent(getActivity(), ListViewDataActivity2.class);
+                break;
+            case R.id.btn_listView:
+                IntentUtil.showIntent(getActivity(), ListViewDetail.class);
+                break;
+            case R.id.btn_keybord:
+                IntentUtil.showIntent(getActivity(), KeyBordListenerActivity.class);
+                break;
+            case R.id.btn_dialog:
+                IntentUtil.showIntent(getActivity(), DialogActivity.class);
                 break;
         }
     }

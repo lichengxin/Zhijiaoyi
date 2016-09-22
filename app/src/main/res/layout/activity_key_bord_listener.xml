@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:id="@+id/activity_key_bord_listener"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.android.zhijiaoyi.ui.activity.KeyBordListenerActivity">
+
+    <include layout="@layout/toolbar"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:padding="@dimen/spac_10"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:padding="@dimen/spac_20"
+                android:id="@+id/tv1"
+                android:text="sssssssss"
+                android:layout_gravity="left"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

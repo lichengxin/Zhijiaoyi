@@ -1,7 +1,9 @@
 package com.android.zhijiaoyi.base;
 
+import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -113,4 +115,34 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onResume();
         setTitle();
     }
+
+    public void showDialogs(int layId,String neg,String pos) {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        View view = getLayoutInflater().inflate(layId, null);
+        builder.setView(view);
+        builder.setCancelable(false);
+        if (neg != null) {
+            builder.setPositiveButton(neg, new
+                    DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    });
+        }
+        if (pos != null) {
+            builder.setPositiveButton(neg, new
+                    DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    });
+        }
+
+
+        builder.show();
+    }
+    interface onNegListener{}
+    interface onPosListener{}
 }
