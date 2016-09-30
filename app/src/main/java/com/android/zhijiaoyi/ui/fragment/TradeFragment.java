@@ -15,7 +15,7 @@ import com.android.zhijiaoyi.R;
 import com.android.zhijiaoyi.base.BaseFragment;
 import com.android.zhijiaoyi.constans.Constant;
 import com.android.zhijiaoyi.ui.activity.ImageActivity;
-import com.android.zhijiaoyi.ui.activity.ItemActivity;
+import com.android.zhijiaoyi.ui.activity.ShapeActivity;
 import com.android.zhijiaoyi.ui.activity.TabActivity;
 import com.android.zhijiaoyi.ui.activity.TestTabActivity;
 import com.android.zhijiaoyi.ui.activity.VolleyActivity;
@@ -54,6 +54,7 @@ public class TradeFragment extends BaseFragment implements View.OnClickListener 
     private Button btn_Volley;
     private Button btn_image;
     private Button btn_image2;
+    private Button mBtnShape;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -79,6 +80,8 @@ public class TradeFragment extends BaseFragment implements View.OnClickListener 
         btn_Volley.setOnClickListener(this);
         btn_image.setOnClickListener(this);
         btn_image2.setOnClickListener(this);
+        mBtnShape = (Button) view.findViewById(R.id.btn_shape);
+        mBtnShape.setOnClickListener(this);
     }
 
     @Override
@@ -91,7 +94,8 @@ public class TradeFragment extends BaseFragment implements View.OnClickListener 
                 IntentUtil.showIntent(getActivity(), TabActivity.class);
                 break;
             case R.id.btn_wchat:
-                Intehttp://www.cnblogs.com/luluping/archive/2010/11/15/1877817.htmlntUtil.showIntent(getActivity(), ItemActivity.class);
+                Intehttp:
+//www.cnblogs.com/luluping/archive/2010/11/15/1877817.htmlntUtil.showIntent(getActivity(), ItemActivity.class);
                 break;
             case R.id.btn_tab2:
                 IntentUtil.showIntent(getActivity(), TestTabActivity.class);
@@ -105,6 +109,9 @@ public class TradeFragment extends BaseFragment implements View.OnClickListener 
                 break;
             case R.id.btn_image2:
                 IntentUtil.showIntent(getActivity(), ImageActivity.class);
+                break;
+            case R.id.btn_shape:
+                IntentUtil.showIntent(getActivity(), ShapeActivity.class);
                 break;
         }
     }

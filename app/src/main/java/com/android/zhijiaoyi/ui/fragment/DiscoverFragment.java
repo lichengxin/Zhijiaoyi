@@ -19,10 +19,10 @@ import com.android.zhijiaoyi.constans.Constant;
 import com.android.zhijiaoyi.ui.activity.CanvasGuideActivity;
 import com.android.zhijiaoyi.ui.activity.CreateGestureActivity;
 import com.android.zhijiaoyi.ui.activity.DialogActivity;
+import com.android.zhijiaoyi.ui.activity.EventBusActivity;
 import com.android.zhijiaoyi.ui.activity.GestureLoginActivity;
 import com.android.zhijiaoyi.ui.activity.JsonActivity;
 import com.android.zhijiaoyi.ui.activity.KeyBordListenerActivity;
-import com.android.zhijiaoyi.ui.activity.ListViewDataActivity;
 import com.android.zhijiaoyi.ui.activity.ListViewDataActivity2;
 import com.android.zhijiaoyi.ui.activity.ListViewDetail;
 import com.android.zhijiaoyi.ui.activity.ShareActivity;
@@ -56,6 +56,7 @@ public class DiscoverFragment extends BaseFragment implements View.OnClickListen
     private Button mBtnListView;
     private Button mBtnKeybord;
     private Button mBtnDialog;
+    private Button mBtnEventbus;
 
     public DiscoverFragment() {
     }
@@ -94,6 +95,8 @@ public class DiscoverFragment extends BaseFragment implements View.OnClickListen
         mBtnKeybord.setOnClickListener(this);
         mBtnDialog = (Button) view.findViewById(R.id.btn_dialog);
         mBtnDialog.setOnClickListener(this);
+        mBtnEventbus = (Button) view.findViewById(R.id.btn_eventbus);
+        mBtnEventbus.setOnClickListener(this);
     }
 
     @Override
@@ -124,7 +127,7 @@ public class DiscoverFragment extends BaseFragment implements View.OnClickListen
                 IntentUtil.showIntent(getActivity(), ShareActivity.class);
                 break;
             case R.id.btn_list:
-                IntentUtil.showIntent(getActivity(), ListViewDataActivity.class);
+//                IntentUtil.showIntent(getActivity(), ListViewDataActivity.class);
                 break;
             case R.id.btn_colect:
                 IntentUtil.showIntent(getActivity(), ListViewDataActivity2.class);
@@ -138,6 +141,10 @@ public class DiscoverFragment extends BaseFragment implements View.OnClickListen
             case R.id.btn_dialog:
                 IntentUtil.showIntent(getActivity(), DialogActivity.class);
                 break;
+            case R.id.btn_eventbus:
+                IntentUtil.showIntent(getActivity(), EventBusActivity.class);
+                break;
+
         }
     }
 

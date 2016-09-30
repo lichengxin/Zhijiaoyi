@@ -15,6 +15,8 @@ import com.android.zhijiaoyi.R;
 import com.android.zhijiaoyi.base.system.AppManager;
 import com.android.zhijiaoyi.base.system.StatusBarCompat;
 
+import org.greenrobot.eventbus.EventBus;
+
 /**
  * 作者： Li
  * 时间： 2016/8/19 11:20
@@ -36,6 +38,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         AppManager.getAppManager().addActivity(this);
         setStatusBarCompat();
         initToolBar();
+
 
     }
 

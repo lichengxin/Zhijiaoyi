@@ -1,1 +1,1 @@
-include ':app', ':lockpattern'
+include ':app', ':lockpattern', ':selectordialog'
